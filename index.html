@@ -1,0 +1,92 @@
+<html>
+<body>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<div id="sankey_multiple" style="width: 4000; height: 1000p;"></div>
+
+<script type="text/javascript">
+  google.charts.load("current", {packages:["sankey"]});
+  google.charts.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    //data.addColumn('string', 'Answer');
+    data.addColumn('number', 'Count');
+    data.addRows([
+    ['9P37C (click:1)','baYip (click:2)',3],
+    ['9P37C (click:1)','end',1],
+    ['YD_nj (click:2)','baYip (click:3)',42],
+    ['baYip (click:4)','ZczB8 (click:5)',5],
+    ['baYip (click:3)','ZczB8 (click:4)',33],
+    ['YD_nj (click:2)','yYaEc (click:3)',3],
+    ['ZczB8 (click:6)','9P37C (click:7)',1],
+    ['baYip (click:14)','ZczB8 (click:15)',1],
+    ['9P37C (click:10)','ZczB8 (click:11)',1],
+    ['9P37C (click:7)','end',1],
+    ['9P37C (click:8)','end',2],
+    ['yYaEc (click:3)','YD_nj (click:4)',2],
+    ['YD_nj (click:5)','baYip (click:6)',1],
+    ['9P37C (click:6)','end',1],
+    ['9P37C (click:8)','url',2],
+    ['ZczB8 (click:9)','9P37C (click:10)',1],
+    ['baYip (click:12)','YD_nj (click:13)',1],
+    ['YD_nj (click:13)','baYip (click:14)',1],
+    ['ZczB8 (click:7)','9P37C (click:8)',1],
+    ['9P37C (click:1)','YD_nj (click:2)',5],
+    ['9P37C (click:1)','ZczB8 (click:2)',3],
+    ['9P37C (click:1)','9P37C (click:2)',3],
+    ['yYaEc (click:1)','YD_nj (click:2)',53],
+    ['9P37C (click:5)','url',24],
+    ['ZczB8 (click:4)','9P37C (click:5)',29],
+    ['YD_nj (click:4)','baYip (click:5)',2],
+    ['yYaEc (click:2)','YD_nj (click:3)',3],
+    ['9P37C (click:9)','end',2],
+    ['baYip (click:5)','ZczB8 (click:6)',1],
+    ['YD_nj (click:3)','baYip (click:4)',7],
+    ['9P37C (click:6)','url',11],
+    ['9P37C (click:7)','url',6],
+    ['ZczB8 (click:5)','9P37C (click:6)',4],
+    ['YD_nj (click:5)','yYaEc (click:6)',2],
+    ['baYip (click:4)','YD_nj (click:5)',2],
+    ['yYaEc (click:6)','YD_nj (click:7)',1],
+    ['baYip (click:8)','ZczB8 (click:9)',1],
+    ['ZczB8 (click:15)','9P37C (click:16)',1],
+    ['ZczB8 (click:5)','baYip (click:6)',1],
+    ['9P37C (click:1)','url',1],
+    ['9P37C (click:5)','end',1],
+    ['baYip (click:6)','ZczB8 (click:7)',2],
+    ['YD_nj (click:7)','baYip (click:8)',1],
+    ['ZczB8 (click:11)','baYip (click:12)',1],
+    ]);
+
+    // Set chart options
+    var options = {
+      width: 40000,
+      sankey: { node: { nodePadding: 400 } },
+    };
+    
+    // Set colors
+    var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
+                  '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
+
+    var options = {
+      height: 4000,
+      sankey: {
+        node: {
+          colors: colors
+        },
+        link: {
+          colorMode: 'gradient',
+          colors: colors
+        }
+      }
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>
